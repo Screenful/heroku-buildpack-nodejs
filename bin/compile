@@ -6,7 +6,11 @@
 #test
 echo "GIT_DIR $GIT_DIR"
 echo "----------"
+
+pwd
+
 git log -n 1 --pretty=format:%ct
+
 echo "----------"
 
 set -o errexit    # always exit on error
