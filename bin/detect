@@ -19,7 +19,7 @@ error() {
 
 if [ -f "$1/package.json" ]; then
   echo 'Node.js'
-  git log -n 1 --pretty=format:%ct
+  ls -al $1
   exit 0
 fi
 
