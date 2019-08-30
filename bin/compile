@@ -5,7 +5,9 @@
 
 #test
 echo "GIT_DIR $GIT_DIR"
-
+echo "----------"
+git log -n 1 --pretty=format:%ct
+echo "----------"
 
 set -o errexit    # always exit on error
 set -o pipefail   # don't ignore exit codes when piping output
