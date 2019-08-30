@@ -3,16 +3,6 @@
 
 ### Configure environment
 
-#test
-echo "GIT_DIR $GIT_DIR"
-echo "----------"
-
-pwd
-
-git log -n 1 --pretty=format:%ct
-
-echo "----------"
-
 set -o errexit    # always exit on error
 set -o pipefail   # don't ignore exit codes when piping output
 unset GIT_DIR     # Avoid GIT_DIR leak from previous build steps
@@ -71,6 +61,20 @@ LOG_FILE=$(mktemp -t node-build-log.XXXXX)
 echo "" > "$LOG_FILE"
 
 build_start_time=$(nowms)
+
+#test
+pwd
+
+header "--------- git log -n 1 --pretty=format:%ct"
+git log -n 1 --pretty=format:%ct
+
+header "--------- git log -n 1 --pretty=format:%ct projects/trello-epics"
+git log -n 1 --pretty=format:%ct projects/trello-epics
+
+header "--------- git log -n 1 --pretty=format:%ct $BUILD_DIR/projects/trello-epics"
+git log -n 1 --pretty=format:%ct $BUILD_DIR/projects/trello-epics
+
+header "----------"
 
 ### Handle errors
 
