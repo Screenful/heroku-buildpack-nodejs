@@ -64,17 +64,18 @@ build_start_time=$(nowms)
 
 #test
 pwd
+ls -al
 
-header "--------- git log -n 1 --pretty=format:%ct"
+header "git log -n 1 --pretty=format:%ct"
 git log -n 1 --pretty=format:%ct
 
-header "--------- git log -n 1 --pretty=format:%ct projects/trello-epics"
-git log -n 1 --pretty=format:%ct projects/trello-epics
+# header "git log -n 1 --pretty=format:%ct projects/trello-epics"
+# git log -n 1 --pretty=format:%ct projects/trello-epics
 
-header "--------- git log -n 1 --pretty=format:%ct $BUILD_DIR/projects/trello-epics"
+header "git log -n 1 --pretty=format:%ct $BUILD_DIR/projects/trello-epics"
 git log -n 1 --pretty=format:%ct $BUILD_DIR/projects/trello-epics
 
-header "----------"
+header ""
 
 ### Handle errors
 
