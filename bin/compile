@@ -65,6 +65,10 @@ build_start_time=$(nowms)
 #test
 pwd
 ls -al
+ls -ald $BP_DIR
+ls -ald $CACHE_DIR
+ls -ald $BUILD_DIR
+ls -ald $ENV_DIR
 
 header "git log -n 1 --pretty=format:%ct"
 git log -n 1 --pretty=format:%ct
